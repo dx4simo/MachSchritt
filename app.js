@@ -88,13 +88,17 @@ async function submitToSheet(payload){
   }
   const res = await fetch(APPS_SCRIPT_URL, {
     method: 'POST',
-    mode: 'cors',
-    headers: { 'Content-Type': 'application/json' },
+    // لا تضيف أي headers هنا؛ خليه يبعث text/plain لتفادي preflight
     body: JSON.stringify(payload)
   });
-  if (!res.ok) throw new Error('فشل الاتصال بالخادم (Apps Script)');
-  return await res.json();
+
+  // لو السيرفر سمح بالقراءة هتبقى res.ok، ولو المتصفح عامل no-cors هتبقى opaque
+  if (res.ok || res.type === 'opaque') {
+    return { ok: true };
+  }
+  throw new Error('فشل الاتصال بالخادم (Apps Script)');
 }
+
 
 enrollForm.addEventListener('submit', async (e) => {
   e.preventDefault();
