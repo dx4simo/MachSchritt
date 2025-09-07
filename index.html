@@ -1,118 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>شركة | MachSchritt</title>
-  <meta name="description" content="كل خدماتنا في صفحة واحدة مع الأسعار والتفاصيل. اختار خدمتك الآن وسيتم التواصل معاك فورا." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'><text y='1em' font-size='96'>🎓</text></svg>">
-  <link rel="stylesheet" href="style.css" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "EducationalOrganization",
-    "name": "منصة الكورسات",
-    "url": "",
-    "description": "كورسات عملية في اللغات، التسويق، الإدارة، والبرمجة.",
-    "address": {"@type":"PostalAddress","addressCountry":"EG"}
-  }
-  </script>
-</head>
-<body>
-  <header class="nav">
-    <div class="container nav-inner">
-      <div class="brand">
-        <span class="logo">🎓</span>
-        <span class="brand-name">كورساتي</span>
-      </div>
-      <nav>
-        <a href="#courses">الكورسات</a>
-        <a href="#faq">الأسئلة الشائعة</a>
-        <a href="#contact">تواصل</a>
-      </nav>
-    </div>
-  </header>
-
-  <section class="hero">
-    <div class="container hero-inner">
-      <div class="hero-text">
-        <h1>طوّر مهاراتك… خطوة عملية كل يوم</h1>
-        <p>مجموعة كورسات عملية، متركزة على التطبيق مش الكلام. اختار الكورس المناسب وسجّل اهتمامك خلال ثواني.</p>
-        <a class="btn btn-primary" href="#courses">تصفح الكورسات</a>
-      </div>
-      <div class="hero-art" aria-hidden="true"><div class="blob"></div></div>
-    </div>
-  </section>
-
-  <section id="courses" class="section">
-    <div class="container">
-      <h2 class="section-title">الكورسات المتاحة</h2>
-      <div id="course-grid" class="grid"></div>
-    </div>
-  </section>
-
-  <section id="faq" class="section alt">
-    <div class="container">
-      <h2 class="section-title">الأسئلة الشائعة</h2>
-      <div class="faq">
-        <details><summary>هل الشهادة معتمدة؟</summary><p>بنقدّم شهادة حضور وإتمام من منصتنا. لو محتاج اعتماد محدد، نقدر نرتّب شراكات مؤسسية عند الطلب.</p></details>
-        <details><summary>هل في نظام تقسيط؟</summary><p>ممكن تقسيط عبر تحويلات بنكية أو محافظ إلكترونية. اختار في الفورم وسيتم التواصل بالتفاصيل.</p></details>
-        <details><summary>هل الكورسات أونلاين ولا اوفلاين؟</summary><p>حسب الكورس. هتلاقي نوع الحضور موضح في كارت كل كورس.</p></details>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="section">
-    <div class="container">
-      <h2 class="section-title">تواصل معنا</h2>
-      <p>لو عندك سؤال سريع، راسلنا مباشرة عبر <a id="whatsapp-direct" href="#" target="_blank" rel="noopener">واتساب</a>.</p>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> كورساتي — كل الحقوق محفوظة.</p>
-      <a href="#top" class="to-top" aria-label="إلى الأعلى">↑</a>
-    </div>
-  </footer>
-
-  <!-- Modal -->
-  <div id="enroll-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
-    <div class="modal-backdrop" data-close></div>
-    <div class="modal-card" role="document">
-      <button class="modal-close" data-close aria-label="إغلاق">×</button>
-      <h3 id="modal-title">سجّل اهتمامك</h3>
-      <form id="enroll-form" novalidate>
-        <div class="form-row">
-          <label>اسمك الكامل
-            <input type="text" name="name" required placeholder="مثال: أحمد علي" />
-          </label>
-        </div>
-        <div class="form-row">
-          <label>رقم الموبايل (واتساب)
-            <input type="tel" name="phone" required placeholder="مثال: 01012345678" />
-          </label>
-        </div>
-        <div class="form-row">
-          <label>الكورس المختار
-            <select name="course" id="course-select" required></select>
-          </label>
-        </div>
-        <div class="form-row">
-          <label>ملاحظاتك (اختياري)
-            <textarea name="note" rows="3" placeholder="أي تفاصيل إضافية تحب تبلغنا بها…"></textarea>
-          </label>
-        </div>
-        <button type="submit" class="btn btn-primary btn-full">إرسال</button>
-        <p class="hint">سيتم تحويلك علي واتساب لإستكمال التسجيل</p>
-        <p id="form-status" class="status" role="status" aria-live="polite"></p>
-      </form>
-    </div>
-  </div>
-
-  <script src="app.js"></script>
-</body>
-</html>
