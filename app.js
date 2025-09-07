@@ -6,7 +6,7 @@ const OWNER_WHATSAPP = "201040707531"; // مثال: 201012345678 لمصر (من 
 
 // رابط تطبيق Google Apps Script (Web App) الذي سيستقبل البيانات ويحفظها في Google Sheet
 // بعد ما تجهّز السكربت وتنشره، ضع الرابط هنا:
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbymSEdJkbi-aUyCymkNbblvylc-6iElJQ7wBzO9fS2KZX_gwdedfDKAf9dZfeYOCI7_Zg/exec";
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwudwhJZy7iqExmNBzkYk-TZ-u187eezaAFGcqkCAg68gOYoIySNKN020nZgjJ88ePySQ/exec";
 
 /* =========================
    بيانات الكورسات
