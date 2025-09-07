@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs>
+    <clipPath id="circleClip">
+      <circle cx="128" cy="128" r="84"/>
+    </clipPath>
+  </defs>
+  <!-- Outer ring -->
+  <circle cx="128" cy="128" r="96" fill="#0b0b0b"/>
+  <!-- Flag inside circle -->
+  <g clip-path="url(#circleClip)">
+    <rect x="44" y="64" width="168" height="56" fill="#0b0b0b"/>
+    <rect x="44" y="120" width="168" height="56" fill="#E2443A"/>
+    <rect x="44" y="176" width="168" height="56" fill="#F5C400"/>
+  </g>
+  <!-- White plus with dark outline (rounded) -->
+  <g>
+    <rect x="112" y="72" width="32" height="112" rx="10" fill="#ffffff" stroke="#0b0b0b" stroke-width="6"/>
+    <rect x="72" y="112" width="112" height="32" rx="10" fill="#ffffff" stroke="#0b0b0b" stroke-width="6"/>
+  </g>
+  <!-- Blue swoosh arrow around bottom/right -->
+  <path d="M36 208 C 110 170, 170 144, 220 164" fill="none" stroke="#0FA8CD" stroke-width="16" stroke-linecap="round"/>
+  <polygon points="220,164 206,184 238,180" fill="#0FA8CD"/>
+</svg>
