@@ -71,7 +71,13 @@ function addTilt(el){
     el.style.transform = '';
   });
 }
-document.querySelectorAll('.tilt').forEach(addTilt);
+// القديم:
+// document.querySelectorAll('.tilt').forEach(addTilt);
+
+// الجديد: فعِّل الـ tilt بس على الماوس (مش اللمس)
+if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+  document.querySelectorAll('.tilt').forEach(addTilt);
+}
 
 function openModal(courseId) { if (courseId) courseSelect.value = courseId; enrollModal.setAttribute('aria-hidden', 'false'); }
 function closeModal() { enrollModal.setAttribute('aria-hidden', 'true'); statusEl.textContent=''; statusEl.className='status'; }
