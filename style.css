@@ -72,6 +72,19 @@ input:focus,select:focus,textarea:focus{outline:3px solid var(--glow);border-col
 .status.ok{color:#86efac}
 .status.err{color:#fecaca}
 
+.card-footer .actions{display:flex; gap:8px; flex-wrap:wrap}
+
+.btn-ghost{
+  color: var(--text);
+  background: transparent;
+  border: 1px solid var(--brand);
+  border-radius: 14px;
+  padding: 10px 14px;
+  font-weight: 800;
+}
+.btn-ghost::before{display:none}          /* إلغاء خلفية الزر الافتراضية */
+.btn-ghost:hover{filter:brightness(1.05); border-color: var(--brand-2);}
+
 
 .brand-mark{height:32px;width:auto;display:block}
 .brand-logo{height:36px;width:auto;display:block} /* لو عندك تعريف سابق سيبه أو استبدله */
@@ -86,3 +99,35 @@ input:focus,select:focus,textarea:focus{outline:3px solid var(--glow);border-col
   .grid{grid-template-columns:1fr}
   .nav nav{display:none}
 }
+
+
+/* كروت ككاروسيل أفقي على الموبايل */
+@media (max-width: 640px){
+  #courses .container{ padding-inline:0 }              /* شدّ الكروت لحواف الشاشة */
+  .grid{
+    display:flex;
+    overflow-x:auto;
+    gap:12px;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling: touch;                 /* سلاسة في iOS */
+    overscroll-behavior-x: contain;
+    padding: 6px 12px 16px;
+    scrollbar-width: none;
+  }
+  .grid::-webkit-scrollbar{ display:none }             /* إخفاء الشريط */
+
+  .card{
+    flex: 0 0 88%;                                     /* عرض كل كارت تقريبًا عرض الشاشة */
+    scroll-snap-align: center;
+  }
+
+  /* أزرار أعرض للمس */
+  .card-footer .actions{ display:flex; gap:8px; width:100% }
+  .card-footer .actions .btn{ flex:1 }
+}
+
+/* تأثير ضغط بسيط للمس (بدل hover) */
+@media (hover: none){
+  .card:active{ transform: translateY(-2px) scale(.99) }
+}
+
