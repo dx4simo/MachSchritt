@@ -13,15 +13,15 @@ const COURSES = [
 /* ===== Testimonials Data ===== */
 const TESTIMONIALS = [
   { name: "محمد سامي", role: "B1 كورس", rating: 5,
-    text: "الشرح عملي وواقعي. اتدرّبت على مواضيع محادثة كتير ونطقي اتحسّن بشكل كبير جدا." },
+    text: "الشرح عملي وواقعي. اتدرّبت على مواضيع محادثة كتير ونطقي اتحسّن بشكل كبير جدا.", avatar: "avatar1.jpg"},
   { name: "سارة عبد الرحمن", role: "تحضير جوتة B2", rating: 4,
-    text: "الحمد لله لولاكم مكنتش هاخد شهادة جوتة ولا كنت احلم اخدها.. فعلا ناس ممتازة وهير اسلام حد شاطر جدا." },
+    text: "الحمد لله لولاكم مكنتش هاخد شهادة جوتة ولا كنت احلم اخدها.. فعلا ناس ممتازة وهير اسلام حد شاطر جدا.", avatar: "avatar2.jpg"},
   { name: "أحمد فوزي", role: "اجراءات البيشايد", rating: 5,
-    text: "بجد بجد تسلموا علي المصداقية.. البيشايد جالي ف خلال شهر بالظبط." },
+    text: "بجد بجد تسلموا علي المصداقية.. البيشايد جالي ف خلال شهر بالظبط.", avatar: "avatar3.jpg" },
   { name: "نانسي علي", role: "عقد عمل", rating: 5,
-    text: "بجد شكرا من كل قلبي علي العقد والفيزا كمان." },
+    text: "بجد شكرا من كل قلبي علي العقد والفيزا كمان.", avatar: "avatar4.jpg"},
   { name: "محمود عادل", role: "مستوي A1", rating: 5,
-    text: "حبيت الالماني جدا من خلال بدايتي معاكم في كورس A1." },
+    text: "حبيت الالماني جدا من خلال بدايتي معاكم في كورس A1.", avatar: "avatar5.jpg"},
 ];
 
 /* ===== Render Testimonials ===== */
@@ -35,7 +35,7 @@ function renderTestimonials(){
   sc.innerHTML = TESTIMONIALS.map(t => `
     <article class="t-card">
       <div class="t-head">
-        <div class="t-avatar">${initials(t.name)}</div>
+        <img class="t-avatar" src="${t.avatar || 'avatar1.jpg'}" alt="${t.name}">
         <div class="t-meta"><b>${t.name}</b><span>${t.role}</span></div>
       </div>
       <div class="t-stars" aria-label="التقييم ${t.rating} من 5">
