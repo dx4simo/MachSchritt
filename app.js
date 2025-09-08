@@ -10,6 +10,54 @@ const COURSES = [
   { id: "interview-prep", title: "إعداد لمقابلات العمل + عقود التمريض", desc: "اعداد لمقابلات التمريض بشكل سهل.", price: "1,500 EGP", duration: "3 أسابيع", level: "All levels", mode: "أونلاين مباشر", image: "img_interview-prep.svg", sample: "https://www.youtube.com/watch?v=ypGJlVy5luo"}
 ];
 
+/* ===== Testimonials Data ===== */
+const TESTIMONIALS = [
+  { name: "محمد سامي", role: "B1 كورس", rating: 5,
+    text: "الشرح عملي وواقعي. اتدرّبت على مواضيع محادثة كتير ونطقي اتحسّن بشكل كبير جدا." },
+  { name: "سارة عبد الرحمن", role: "تحضير جوتة B2", rating: 4,
+    text: "الحمد لله لولاكم مكنتش هاخد شهادة جوتة ولا كنت احلم اخدها.. فعلا ناس ممتازة وهير اسلام حد شاطر جدا." },
+  { name: "أحمد فوزي", role: "اجراءات البيشايد", rating: 5,
+    text: "بجد بجد تسلموا علي المصداقية.. البيشايد جالي ف خلال شهر بالظبط." },
+  { name: "نانسي علي", role: "عقد عمل", rating: 5,
+    text: "بجد شكرا من كل قلبي علي العقد والفيزا كمان." },
+  { name: "محمود عادل", role: "مستوي A1", rating: 5,
+    text: "حبيت الالماني جدا من خلال بدايتي معاكم في كورس A1." },
+];
+
+/* ===== Render Testimonials ===== */
+function initials(name){
+  const parts = name.trim().split(/\s+/);
+  return (parts[0]?.[0] || '') + (parts[1]?.[0] || '');
+}
+function renderTestimonials(){
+  const sc = document.getElementById('tSc');
+  if(!sc) return;
+  sc.innerHTML = TESTIMONIALS.map(t => `
+    <article class="t-card">
+      <div class="t-head">
+        <div class="t-avatar">${initials(t.name)}</div>
+        <div class="t-meta"><b>${t.name}</b><span>${t.role}</span></div>
+      </div>
+      <div class="t-stars" aria-label="التقييم ${t.rating} من 5">
+        ${'★'.repeat(t.rating)}${'☆'.repeat(5 - t.rating)}
+      </div>
+      <p class="t-text">${t.text}</p>
+    </article>
+  `).join('');
+}
+renderTestimonials();
+
+/* ===== Buttons: scroll by one card on mobile ===== */
+const tSc = document.getElementById('tSc');
+const btnPrev = document.getElementById('tPrev');
+const btnNext = document.getElementById('tNext');
+if (tSc && btnPrev && btnNext) {
+  const step = () => Math.min(360, tSc.clientWidth * 0.9);
+  btnNext.addEventListener('click', ()=> tSc.scrollBy({left: +step(), behavior:'smooth'}));
+  btnPrev.addEventListener('click', ()=> tSc.scrollBy({left: -step(), behavior:'smooth'}));
+}
+
+
 const grid = document.getElementById('course-grid');
 const courseSelect = document.getElementById('course-select');
 const yearEl = document.getElementById('year');
