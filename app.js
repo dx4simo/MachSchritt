@@ -2,12 +2,12 @@ const OWNER_WHATSAPP = "201040707531";
 const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyqxS66JOGQjJxuTDB9nB0oIJwZCmznlvF2FN2CWwsOo8PP4mup02IAHBi_ZyiHvWEPlQ/exec";
 
 const COURSES = [
-  { id: "de-b1", title: "لغة ألمانية B1 (تحضير جوتة)", desc: "تدريب عملي مع محادثات واقعية ونماذج امتحان.", price: "3,500 EGP", duration: "8 أسابيع", level: "B1", mode: "أونلاين مباشر", image: "img_de-b1.svg" },
-  { id: "en-conv", title: "لغة إنجليزية — محادثة عملية", desc: "تحسين الطلاقة والنطق عبر محادثات وتمارين استماع.", price: "2,200 EGP", duration: "6 أسابيع", level: "All levels", mode: "أونلاين / مسجل", image: "img_en-conv.svg" },
-  { id: "pmp-prep", title: "إعداد لاختبار PMP®", desc: "تغطية كاملة للمحتوى مع بنك أسئلة ومشاريع مصغّرة.", price: "6,900 EGP", duration: "10 أسابيع", level: "Advanced", mode: "أونلاين مباشر", image: "img_pmp-prep.svg" },
-  { id: "digital-marketing", title: "تسويق رقمي عملي", desc: "من الحملات الإعلانية للتحليلات. تطبيق على مشاريع حقيقية.", price: "4,500 EGP", duration: "7 أسابيع", level: "Intermediate", mode: "أونلاين مباشر", image: "img_digital-marketing.svg" },
-  { id: "python-beginner", title: "برمجة بايثون للمبتدئين", desc: "أساسيات البرمجة + مشاريع صغيرة.", price: "2,800 EGP", duration: "6 أسابيع", level: "Beginner", mode: "أونلاين / مسجل", image: "img_python-beginner.svg" },
-  { id: "interview-prep", title: "إعداد لمقابلات العمل", desc: "تمارين أسئلة + محاكاة مقابلة وتغذية راجعة.", price: "1,500 EGP", duration: "3 أسابيع", level: "All levels", mode: "أونلاين مباشر", image: "img_interview-prep.svg" }
+  { id: "de-b1", title: "لغة ألمانية B1 (تحضير جوتة)", desc: "تدريب عملي مع محادثات واقعية ونماذج امتحان.", price: "3,500 EGP", duration: "8 أسابيع", level: "B1", mode: "أونلاين مباشر", image: "img_de-b1.svg", sample: "https://www.youtube.com/watch?v=ypGJlVy5luo" },
+  { id: "en-conv", title: "لغة إنجليزية — محادثة عملية", desc: "تحسين الطلاقة والنطق عبر محادثات وتمارين استماع.", price: "2,200 EGP", duration: "6 أسابيع", level: "All levels", mode: "أونلاين / مسجل", image: "img_en-conv.svg", sample: "https://www.youtube.com/watch?v=ypGJlVy5luo"},
+  { id: "pmp-prep", title: "إعداد لاختبار PMP®", desc: "تغطية كاملة للمحتوى مع بنك أسئلة ومشاريع مصغّرة.", price: "6,900 EGP", duration: "10 أسابيع", level: "Advanced", mode: "أونلاين مباشر", image: "img_pmp-prep.svg", sample: "https://www.youtube.com/watch?v=ypGJlVy5luo"},
+  { id: "digital-marketing", title: "تسويق رقمي عملي", desc: "من الحملات الإعلانية للتحليلات. تطبيق على مشاريع حقيقية.", price: "4,500 EGP", duration: "7 أسابيع", level: "Intermediate", mode: "أونلاين مباشر", image: "img_digital-marketing.svg", sample: "https://www.youtube.com/watch?v=ypGJlVy5luo"},
+  { id: "python-beginner", title: "برمجة بايثون للمبتدئين", desc: "أساسيات البرمجة + مشاريع صغيرة.", price: "2,800 EGP", duration: "6 أسابيع", level: "Beginner", mode: "أونلاين / مسجل", image: "img_python-beginner.svg", sample: "https://www.youtube.com/watch?v=ypGJlVy5luo"},
+  { id: "interview-prep", title: "إعداد لمقابلات العمل", desc: "تمارين أسئلة + محاكاة مقابلة وتغذية راجعة.", price: "1,500 EGP", duration: "3 أسابيع", level: "All levels", mode: "أونلاين مباشر", image: "img_interview-prep.svg", sample: "https://www.youtube.com/watch?v=ypGJlVy5luo"}
 ];
 
 const grid = document.getElementById('course-grid');
@@ -32,22 +32,25 @@ function renderCourses() {
     const card = document.createElement('article');
     card.className = 'card tilt';
     card.innerHTML = `
-      <figure class="card-media">
-        <img src="${course.image}" alt="${course.title}" loading="lazy" />
-      </figure>
-      <div class="card-body">
-        <span class="badge">${course.mode}</span>
-        <h3>${course.title}</h3>
-        <p>${course.desc}</p>
-        <div class="meta">
-          <span>المدة: ${course.duration}</span>
-          <span>المستوى: ${course.level}</span>
-        </div>
-      </div>
-      <div class="card-footer">
-        <span class="price">${course.price}</span>
-        <a class="btn btn-primary" data-enroll="${course.id}" href="#">سجّل</a>
-      </div>`;
+  <figure class="card-media">
+    <img src="${course.image}" alt="${course.title}" loading="lazy" />
+  </figure>
+  <div class="card-body">
+    <span class="badge">${course.mode}</span>
+    <h3>${course.title}</h3>
+    <p>${course.desc}</p>
+    <div class="meta">
+      <span>المدة: ${course.duration}</span>
+      <span>المستوى: ${course.level}</span>
+    </div>
+  </div>
+  <div class="card-footer">
+    <span class="price">${course.price}</span>
+    <div class="actions">
+      ${course.sample ? `<a class="btn btn-ghost" href="${course.sample}" target="_blank" rel="noopener">شاهد عينة</a>` : ''}
+      <a class="btn btn-primary" data-enroll="${course.id}" href="#">سجّل</a>
+    </div>
+  </div>`;
     grid.appendChild(card);
   });
   courseSelect.innerHTML = COURSES.map(c => `<option value="${c.id}">${c.title}</option>`).join('');
