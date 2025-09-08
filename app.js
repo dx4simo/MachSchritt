@@ -2,12 +2,12 @@ const OWNER_WHATSAPP = "201040707531";
 const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyqxS66JOGQjJxuTDB9nB0oIJwZCmznlvF2FN2CWwsOo8PP4mup02IAHBi_ZyiHvWEPlQ/exec";
 
 const COURSES = [
-  { id: "de-b1", title: " كورس لغة ألمانية B1(متميز)", desc: "تدريب عملي مع محادثات واقعية بشكل متميز جدا.", price: "3,500 EGP", duration: "8 أسابيع", level: "B1", mode: "مسجل/أونلاين مباشر", image: "img_de-b1.svg", sample: "https://www.youtube.com/watch?v=ypGJlVy5luo" },
-  { id: "en-conv", title: "لغة إنجليزية — محادثة عملية", desc: "تحسين الطلاقة والنطق عبر محادثات وتمارين استماع.", price: "2,200 EGP", duration: "6 أسابيع", level: "All levels", mode: "أونلاين / مسجل", image: "img_en-conv.svg", sample: "https://www.youtube.com/watch?v=ypGJlVy5luo"},
-  { id: "pmp-prep", title: "إعداد لاختبار PMP®", desc: "تغطية كاملة للمحتوى مع بنك أسئلة ومشاريع مصغّرة.", price: "6,900 EGP", duration: "10 أسابيع", level: "Advanced", mode: "أونلاين مباشر", image: "img_pmp-prep.svg", sample: "https://www.youtube.com/watch?v=ypGJlVy5luo"},
-  { id: "digital-marketing", title: "تسويق رقمي عملي", desc: "من الحملات الإعلانية للتحليلات. تطبيق على مشاريع حقيقية.", price: "4,500 EGP", duration: "7 أسابيع", level: "Intermediate", mode: "أونلاين مباشر", image: "img_digital-marketing.svg", sample: "https://www.youtube.com/watch?v=ypGJlVy5luo"},
-  { id: "python-beginner", title: "برمجة بايثون للمبتدئين", desc: "أساسيات البرمجة + مشاريع صغيرة.", price: "2,800 EGP", duration: "6 أسابيع", level: "Beginner", mode: "أونلاين / مسجل", image: "img_python-beginner.svg", sample: "https://www.youtube.com/watch?v=ypGJlVy5luo"},
-  { id: "interview-prep", title: "إعداد لمقابلات العمل", desc: "تمارين أسئلة + محاكاة مقابلة وتغذية راجعة.", price: "1,500 EGP", duration: "3 أسابيع", level: "All levels", mode: "أونلاين مباشر", image: "img_interview-prep.svg", sample: "https://www.youtube.com/watch?v=ypGJlVy5luo"}
+  { id: "de-b1", title: "كورس لغة ألمانية B1(متميز)", desc: "تدريب عملي مع محادثات واقعية بشكل متميز جدا.", price: "3,500 EGP", duration: "8 أسابيع", level: "B1", mode: "أونلاين مباشر/ مسجل", image: "img_de-b1.svg", sample: "https://www.youtube.com/watch?v=ypGJlVy5luo" },
+  { id: "en-conv", title: "تحضير B2 جوتة بشكل سهل جدا", desc: "بنتدرب كويس جدا علي الامتحانات مع بعض ومش بنسيبك غير لما تنجح.", price: "6000 EGP", duration: "8 أسابيع", level: "لازم تكون مخلص A2", mode: "أونلاين مباشر/ مسجل", image: "img_en-conv.svg", sample: "https://www.youtube.com/watch?v=CrnVdq7B-fE"},
+  { id: "pmp-prep", title: "تخليص اجراءات البيشايد", desc: "بنعمل البيشايد في اسرع وقت وباسعار مميزة", price: "تختلف حسب الولاية", duration: "شهر - شهرين", image: "img_pmp-prep.svg"},
+  { id: "digital-marketing", title: "مستوي A1", desc: "دراسة المستوي الاول مع مدربين محترفين.", price: "3,500 EGP", duration: "7 أسابيع", level: "Intermediate", mode: "أونلاين مباشر", image: "img_digital-marketing.svg", sample: "https://www.youtube.com/watch?v=ypGJlVy5luo"},
+  { id: "python-beginner", title: "مستوي A2", desc: "دراسة المستوي الثاني مع مدربين محترفين.", price: "2,800 EGP", duration: "6 أسابيع", level: "Beginner", mode: "أونلاين / مسجل", image: "img_python-beginner.svg", sample: "https://www.youtube.com/watch?v=ypGJlVy5luo"},
+  { id: "interview-prep", title: "إعداد لمقابلات العمل + عقود التمريض", desc: "اعداد لمقابلات التمريض بشكل سهل.", price: "1,500 EGP", duration: "3 أسابيع", level: "All levels", mode: "أونلاين مباشر", image: "img_interview-prep.svg", sample: "https://www.youtube.com/watch?v=ypGJlVy5luo"}
 ];
 
 const grid = document.getElementById('course-grid');
