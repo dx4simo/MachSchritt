@@ -1,5 +1,13 @@
 const OWNER_WHATSAPP = "201040707531";
 const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyqxS66JOGQjJxuTDB9nB0oIJwZCmznlvF2FN2CWwsOo8PP4mup02IAHBi_ZyiHvWEPlQ/exec";
+const toTopEl = document.getElementById('toTop');
+if (toTopEl) {
+  toTopEl.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();                 // يمنع أي لسنر عام من تعطيل الحركة
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
 
 const COURSES = [
   { id: "de-b1", title: "كورس لغة ألمانية B1(متميز)", desc: "تدريب عملي مع محادثات واقعية بشكل متميز جدا.", price: "3,500 EGP", duration: "8 أسابيع", level: "B1", mode: "أونلاين مباشر/ مسجل", image: "img_de-b1.svg", sample: "https://www.youtube.com/watch?v=ypGJlVy5luo" },
