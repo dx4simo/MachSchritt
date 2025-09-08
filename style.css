@@ -101,33 +101,37 @@ input:focus,select:focus,textarea:focus{outline:3px solid var(--glow);border-col
 }
 
 
-/* كروت ككاروسيل أفقي على الموبايل */
+/* شبكة موبايل: كارتين في الصف */
 @media (max-width: 640px){
-  #courses .container{ padding-inline:0 }              /* شدّ الكروت لحواف الشاشة */
+  #courses .container{ padding-inline: 12px; }
+
   .grid{
-    display:flex;
-    overflow-x:auto;
-    gap:12px;
-    scroll-snap-type:x mandatory;
-    -webkit-overflow-scrolling: touch;                 /* سلاسة في iOS */
-    overscroll-behavior-x: contain;
-    padding: 6px 12px 16px;
-    scrollbar-width: none;
-  }
-  .grid::-webkit-scrollbar{ display:none }             /* إخفاء الشريط */
-
-  .card{
-    flex: 0 0 88%;                                     /* عرض كل كارت تقريبًا عرض الشاشة */
-    scroll-snap-align: center;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 12px;
+    overflow: visible;            /* إلغاء السحب الأفقي */
   }
 
-  /* أزرار أعرض للمس */
-  .card-footer .actions{ display:flex; gap:8px; width:100% }
-  .card-footer .actions .btn{ flex:1 }
+  .card{ border-radius:16px; }
+  .card-media{ aspect-ratio: 4/3; }         /* صورة أنسب للموبايل */
+  .card h3{ font-size:16px; }
+  .card p{ font-size:14px; min-height:auto; }
+
+  /* ترتيب الأزرار بشكل أنظف */
+  .card-footer{ flex-direction: column; align-items: stretch; gap:8px; }
+  .card-footer .actions{ width:100%; display:flex; gap:8px; }
+  .card-footer .actions .btn{ flex:1; }
+  .price{ align-self:flex-end; }
 }
 
-/* تأثير ضغط بسيط للمس (بدل hover) */
-@media (hover: none){
-  .card:active{ transform: translateY(-2px) scale(.99) }
+/* لو الشاشة أصغر جدًا (ميني)، خليه عمود واحد */
+@media (max-width: 380px){
+  .grid{ grid-template-columns: 1fr; }
 }
+
+/* عنوان القسم يكون أهدى على الموبايل */
+@media (max-width: 640px){
+  .section-title{ font-size:20px; margin-bottom:14px; }
+}
+
 
