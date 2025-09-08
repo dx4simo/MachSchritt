@@ -21,6 +21,7 @@ img{max-width:100%;display:block}
 .brand-logo{height:28px;width:auto;display:block}
 .logo-emoji{font-size:24px;display:none}
 .brand-name{font-weight:900;font-size:22px;color:var(--brand)}
+.brand-link{display:flex;align-items:center;gap:6px;text-decoration:none}
 .nav a{margin-inline:10px;font-weight:700;color:#c7d2fe}
 .hero{background: radial-gradient(1200px 500px at 20% -50%, rgba(34,211,238,0.15), transparent 60%), radial-gradient(700px 400px at 120% 0%, rgba(110,231,183,0.15), transparent 60%);}
 .hero-inner{display:grid;grid-template-columns:1.1fr 0.9fr;gap:28px;padding:70px 0;align-items:center}
