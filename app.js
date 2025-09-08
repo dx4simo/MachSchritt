@@ -2,7 +2,7 @@ const OWNER_WHATSAPP = "201040707531";
 const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyqxS66JOGQjJxuTDB9nB0oIJwZCmznlvF2FN2CWwsOo8PP4mup02IAHBi_ZyiHvWEPlQ/exec";
 
 const COURSES = [
-  { id: "de-b1", title: "لغة ألمانية B1 (تحضير جوتة)", desc: "تدريب عملي مع محادثات واقعية ونماذج امتحان.", price: "3,500 EGP", duration: "8 أسابيع", level: "B1", mode: "أونلاين مباشر", image: "img_de-b1.svg", sample: "https://www.youtube.com/watch?v=ypGJlVy5luo" },
+  { id: "de-b1", title: " كورس لغة ألمانية B1(متميز)", desc: "تدريب عملي مع محادثات واقعية بشكل متميز جدا.", price: "3,500 EGP", duration: "8 أسابيع", level: "B1", mode: "مسجل/أونلاين مباشر", image: "img_de-b1.svg", sample: "https://www.youtube.com/watch?v=ypGJlVy5luo" },
   { id: "en-conv", title: "لغة إنجليزية — محادثة عملية", desc: "تحسين الطلاقة والنطق عبر محادثات وتمارين استماع.", price: "2,200 EGP", duration: "6 أسابيع", level: "All levels", mode: "أونلاين / مسجل", image: "img_en-conv.svg", sample: "https://www.youtube.com/watch?v=ypGJlVy5luo"},
   { id: "pmp-prep", title: "إعداد لاختبار PMP®", desc: "تغطية كاملة للمحتوى مع بنك أسئلة ومشاريع مصغّرة.", price: "6,900 EGP", duration: "10 أسابيع", level: "Advanced", mode: "أونلاين مباشر", image: "img_pmp-prep.svg", sample: "https://www.youtube.com/watch?v=ypGJlVy5luo"},
   { id: "digital-marketing", title: "تسويق رقمي عملي", desc: "من الحملات الإعلانية للتحليلات. تطبيق على مشاريع حقيقية.", price: "4,500 EGP", duration: "7 أسابيع", level: "Intermediate", mode: "أونلاين مباشر", image: "img_digital-marketing.svg", sample: "https://www.youtube.com/watch?v=ypGJlVy5luo"},
