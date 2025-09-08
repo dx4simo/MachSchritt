@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 160">
+  <style>
+    .wordmark { font: 900 96px 'Cairo', Arial, sans-serif; dominant-baseline: alphabetic; }
+    .mach { fill: #0FA8CD; }
+    .schritt { fill: #E2443A; }
+  </style>
+  <text x="10" y="110" class="wordmark">
+    <tspan class="mach">Mach</tspan><tspan class="schritt">Schritt</tspan>
+  </text>
+</svg>
